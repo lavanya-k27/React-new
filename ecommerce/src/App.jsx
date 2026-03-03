@@ -1,5 +1,9 @@
 import { Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage";
+import Checkout from "./pages/Checkout/Checkout";
+import OrdersPage from "./pages/OrdersPage";
+import TrackingPage from "./pages/TrackingPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import "./App.css";
 
 function App() {
@@ -7,7 +11,10 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="checkout" element={<div>Test checkout page</div>} />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="orders" element={<OrdersPage />} />
+        <Route path="tracking" element={<TrackingPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );

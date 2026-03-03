@@ -1,0 +1,14 @@
+input {
+  padding: 10px 25px;
+  width: 200px;
+  height: 17px;
+  border-radius: 10px;
+  border-width: 1px;
+  margin: 10px;
+}
+
+.straight {
+  display: flex;
+  align-items: center;
+
+}

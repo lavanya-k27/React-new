@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import "./Header.css";
 
-const Header = ({ cart }) => {
+const Header = ({ cart = [] }) => {
   let totalQuantity = 0;
 
   cart.forEach((cartItem) => {

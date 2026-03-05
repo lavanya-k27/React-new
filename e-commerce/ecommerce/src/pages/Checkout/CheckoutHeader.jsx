@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import "./CheckoutHeader.css";
 
-const CheckoutHeader = () => {
+const CheckoutHeader = ({ cart }) => {
   return (
     <>
       <div className="checkout-header">
@@ -16,7 +16,7 @@ const CheckoutHeader = () => {
           <div className="checkout-header-middle-section">
             Checkout (
             <Link className="return-to-home-link" to="/">
-              3 items
+              {cart.quantity}
             </Link>
             )
           </div>

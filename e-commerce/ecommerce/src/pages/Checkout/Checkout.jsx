@@ -46,13 +46,17 @@ const Checkout = ({ cart, setCart }) => {
     <>
       <title>Checkout</title>
       <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />
-      <CheckoutHeader />
+      <CheckoutHeader cart={cart} />
 
       <div className="checkout-page">
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-          <OrderSummary deliveryOptions={deliveryOptions} cart={cart} />
+          <OrderSummary
+            deliveryOptions={deliveryOptions}
+            cart={cart}
+            handleDeliveryOptionChange={handleDeliveryOptionChange}
+          />
           <PaymentSummary paymentSummary={paymentSummary} />
         </div>
       </div>

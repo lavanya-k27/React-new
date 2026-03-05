@@ -1,12 +1,12 @@
 import Header from "../components/Header";
 import "./TrackingPage.css";
 
-const TrackingPage = () => {
+const TrackingPage = ({ cart }) => {
   return (
     <>
       <title>Tracking</title>
       <link rel="icon" type="image/svg+xml" href="/tracking-favicon.png" />
-      <Header />
+      <Header cart={cart} />
 
       <div className="tracking-page">
         <div className="order-tracking">

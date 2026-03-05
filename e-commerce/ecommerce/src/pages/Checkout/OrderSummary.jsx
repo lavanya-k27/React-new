@@ -6,6 +6,7 @@ export const OrderSummary = ({
   deliveryOptions,
   cart,
   handleDeliveryOptionChange,
+  getCartData,
 }) => {
   return (
     <>
@@ -21,7 +22,10 @@ export const OrderSummary = ({
               <div key={cartItem.productId} className="cart-item-container">
                 <DeliveryDate selectedDeliveryOption={selectedDeliveryOption} />
                 <div className="cart-item-details-grid">
-                  <CartItemDetails cartItem={cartItem} />
+                  <CartItemDetails
+                    cartItem={cartItem}
+                    getCartData={getCartData}
+                  />
                   <DeliveryOptions
                     deliveryOptions={deliveryOptions}
                     cartItem={cartItem}

@@ -21,7 +21,11 @@ export const Product = ({ product, getCartData }) => {
     <>
       <div className="product-container">
         <div className="product-image-container">
-          <img className="product-image" src={product.image} />
+          <img
+            className="product-image"
+            data-testId="product-image"
+            src={product.image}
+          />
         </div>
 
         <div className="product-name limit-text-to-2-lines">{product.name}</div>
@@ -63,6 +67,7 @@ export const Product = ({ product, getCartData }) => {
         <button
           className="add-to-cart-button button-primary"
           onClick={addToCart}
+          data-testid="add-to-cart-button"
         >
           Add to Cart
         </button>

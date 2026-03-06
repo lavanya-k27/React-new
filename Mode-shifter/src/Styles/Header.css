@@ -7,5 +7,19 @@
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  margin: 10px
+  margin: 0px
+}
+
+.header-container.dark {
+  background-color: #787c78;
+  color: white;
+}
+
+.header-button {
+  width: 120px;
+}
+
+.header-button.dark {
+  background-color: #949b94;
+  color: white
 }

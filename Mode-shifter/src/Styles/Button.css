@@ -1,0 +1,17 @@
+button {
+  width: 100px;
+  height: 50px;
+  padding: 15px;
+  margin: 15px;
+  background-color: #62df96;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  color: black;
+}
+
+button.dark {
+
+  background-color: #7b817d;
+  color: white
+}

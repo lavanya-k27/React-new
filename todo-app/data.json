@@ -1,0 +1,13 @@
+{
+  "tasks": [
+    {
+      "text": "Meditate",
+      "id": "XJ5bh0LFCKY"
+    },
+    {
+      "text": "draw",
+      "id": "wWDK_wHs-gM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

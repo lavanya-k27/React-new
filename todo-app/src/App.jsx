@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import TaskInputBar from "./components/TaskInputBar";
 import TasksList from "./components/TasksList";
 import "./App.css";
@@ -7,12 +8,27 @@ function App() {
   const [text, setText] = useState("");
   const [tasks, setTasks] = useState([]);
 
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const response = await axios.get("http://localhost:3001/tasks");
+      setTasks(response.data);
+      console.log(response);
+    };
+
+    fetchTasks();
+  }, []);
+
   const handleChange = (e) => {
     setText(e.target.value);
   };
 
-  const addTasks = () => {
-    setTasks((tasks) => [...tasks, text]);
+  const addTasks = async () => {
+    const newTask = {
+      text: text,
+    };
+
+    const response = await axios.post("http://localhost:3001/tasks", newTask);
+    setTasks((prev) => [...prev, response.data]);
     setText("");
   };
 
@@ -24,7 +40,7 @@ function App() {
         addTasks={addTasks}
         text={text}
       />
-      <TasksList tasks={tasks} />
+      <TasksList tasks={tasks} setTasks={setTasks} />
     </div>
   );
 }

@@ -1,0 +1,38 @@
+.tasks-container {
+
+  background-color: rgb(201, 191, 191);
+  flex: 3;
+  margin: 25px;
+  width: 275px;
+  border-radius: 10px;
+}
+
+.tasks {
+  background-color: rgb(156, 150, 150);
+  margin: 5px;
+  border-radius: 5px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  font-size: 20px;
+
+}
+
+.task-edit {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.task-done {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.task-delete {
+  cursor: pointer;
+  margin-left: 10px;
+}

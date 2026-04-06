@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #DEB887;
+  height: 100vh;
+}
+
+
+textarea {
+  width: 350px;
+  height: 120px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #F0E68C;
+  border-width: 3px;
+  border-color: #c7bf74;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  background-color: #af926c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+p {
+  color: #5a4b37;
+  font-size: 25px;
+}

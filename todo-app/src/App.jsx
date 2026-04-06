@@ -17,7 +17,8 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
+      <h1>YOUR TODO LISTS</h1>
       <TaskInputBar
         handleChange={handleChange}
         addTasks={addTasks}

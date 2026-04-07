@@ -7,6 +7,18 @@
     {
       "text": "draw",
       "id": "wWDK_wHs-gM"
+    },
+    {
+      "text": "Meeting",
+      "id": "IU32ela5H-s"
+    },
+    {
+      "text": "Play",
+      "id": "BnkYWt8_VgY"
+    },
+    {
+      "text": "Exercise",
+      "id": "3moxK5iUV4w"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

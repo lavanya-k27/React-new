@@ -36,3 +36,13 @@
   cursor: pointer;
   margin-left: 10px;
 }
+
+.task-completed {
+  background-color: rgb(144, 238, 144);
+  /* light green */
+}
+
+.task-completed .task {
+  text-decoration: line-through;
+  opacity: 0.7;
+}

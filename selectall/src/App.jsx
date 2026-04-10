@@ -4,10 +4,25 @@ import { list } from "./list.ts";
 import "./App.css";
 
 function App() {
-  const [selectAll, setSelectAll] = useState(false);
+  const [checkedList, setCheckedList] = useState(list);
 
-  const handleSelectAll = () => {
-    setSelectAll(!selectAll);
+  const handleChecked = (id, isChecked) => {
+    const updatedList = checkedList.map((item) =>
+      item.id === id ? { ...item, checked: isChecked } : item,
+    );
+
+    setCheckedList(updatedList);
+  };
+
+  const handleSelectAll = (e) => {
+    const isChecked = e.target.checked;
+
+    const updatedList = checkedList.map((item) => ({
+      ...item,
+      checked: isChecked,
+    }));
+
+    setCheckedList(updatedList);
   };
 
   return (
@@ -16,7 +31,7 @@ function App() {
         <label>
           <input
             type="checkbox"
-            checked={selectAll}
+            checked={checkedList.every((item) => item.checked)}
             onChange={handleSelectAll}
           />
           Select All
@@ -24,12 +39,14 @@ function App() {
       </div>
 
       <div className="list">
-        {list.map((item) => {
+        {checkedList.map((item) => {
           return (
             <Checkbox
               key={item.id}
+              id={item.id}
               listName={item.name}
-              checked={selectAll ? true : false}
+              checked={item.checked}
+              onChange={handleChecked}
             />
           );
         })}

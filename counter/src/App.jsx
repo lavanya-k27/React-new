@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Button from "./components/Button";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [inputValue, setInputValue] = useState(0);
+
+  const increaseCount = () => {
+    setCount(count + 1);
+  };
+
+  const decreaseCount = () => {
+    setCount(count - 1);
+  };
+
+  const handleInput = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const increaseStep = () => {
+    setCount(Number(count) + Number(inputValue));
+    setInputValue("");
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      <h1>Counter App</h1>
+      <div className="counter">
+        <div>Current count - {count}</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="buttons">
+        <Button name="increase count" onClick={increaseCount} />
+        <Button name="decrease count" onClick={decreaseCount} />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <div className="step-counter">
+        <h2> Step Counter</h2>
+        <input
+          type="number"
+          placeholder="type the number you want to add"
+          className="input"
+          onChange={handleInput}
+          value={inputValue}
+        />
+        <Button name="add" onClick={increaseStep} />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
